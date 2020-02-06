@@ -6,12 +6,15 @@ body {
 }
 
 div#root {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
+}
+table {
+    width: 100%;
 }
 th {
     border: 1px solid;
-    padding: 10px;
-    margin: 7px;
+    padding: 5px;
+    min-width: 50px;
+    max-width: 100px;
+    margin: 50px;
 }
