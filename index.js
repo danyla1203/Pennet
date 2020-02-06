@@ -78,13 +78,12 @@ function getGametes(string) {
     let second = string[2] + string[3];
 
     let third;
-    let values;
-
+    let values = [first, second];
+    
     if (string.length > 4) {
         third = string[4] + string[5];
         values = [first, second, third];
     }
-    values = [first, second];
     
     let arr = [].concat(values);
     let result = [];
