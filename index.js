@@ -6,6 +6,12 @@ function generate() {
     let second_parent = form.elements.p2.value;
 
     //Check data
+    if(first_parent.search(/[A, a]{2}[B, b]{2}[C, c]{2}/) == -1 || second_parent.search(/[A, a]{2}[B, b]{2}[C, c]{2}/) == -1) {
+        form.elements.p1.value = "";
+        form.elements.p2.value = "";
+        alert("Input correct data!");
+        return;
+    }
 
     //get gametes
     p1_gametes = getGametes(first_parent);
@@ -14,12 +20,12 @@ function generate() {
     console.log(p1_gametes);
     console.log(p2_gametes);
     
+    //get childrens
     let table = merge_parents(p1_gametes, p2_gametes);
 
+    //insert in dom
     let html_table = createHtml(table);
-
     ouput.innerHTML = html_table;
-
 }
 
 function createHtml(table) {
