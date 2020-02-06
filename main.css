@@ -1,0 +1,17 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+div#root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+th {
+    border: 1px solid;
+    padding: 10px;
+    margin: 7px;
+}
