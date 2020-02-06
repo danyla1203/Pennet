@@ -6,7 +6,7 @@ function generate() {
     let second_parent = form.elements.p2.value;
 
     //Check data
-    if(first_parent.search(/[A, a]{2}[B, b]{2}[C, c]{2}/) == -1 || second_parent.search(/[A, a]{2}[B, b]{2}[C, c]{2}/) == -1) {
+    if(first_parent.length < 1 || second_parent.length < 1) {
         form.elements.p1.value = "";
         form.elements.p2.value = "";
         alert("Input correct data!");
@@ -81,8 +81,10 @@ function make_child(gamete1, gamete2) {
 
 function getGametes(string) {
     let first = string[0] + string[1];
+    if (string.length <= 2) {
+        return [first[0], first[1]];
+    }
     let second = string[2] + string[3];
-
     let third;
     let values = [first, second];
     
@@ -138,7 +140,5 @@ function getGametes(string) {
             }
         }
     }
-
     return sorted_result;
-
 }
